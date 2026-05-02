@@ -15,7 +15,7 @@
 clear all
 addpath(genpath('./Utils'));
 
-maxit = 300;              
+maxit = 50;              
 param.mu = 0.7;           %no need to change
 param.delta = 0.99;       %no need to change
 param.theta = 1;          %no need to change
@@ -41,7 +41,7 @@ fprintf('\nCoil Sensitivity Estimation Error = %2f percent\n\n',coil_err);
 
 %% Sloution by NRITV
 
-out = solver_MC_P_NRITV_L10 (maxit,mask,(sss),x0,param,Kudata);
+out = solver_MC_P_NRITV2 (maxit,mask,(sss),x0,param,Kudata);
 
 out.Runtime
 u = out.sol;
